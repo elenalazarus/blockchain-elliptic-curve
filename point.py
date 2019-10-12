@@ -1,4 +1,8 @@
 class EllipticCurve:
+    """
+    Class for definion of Elliptic Curve  y = x^3 + a * x + b.
+    In blockchain a = 7 and b = 0
+    """
     def __init__(self, a, b):
         self.a = a
         self.b = b
