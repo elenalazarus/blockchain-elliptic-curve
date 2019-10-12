@@ -43,6 +43,9 @@ class Point:
 
         # if P = Q
         if (self.x, self.y) == (Q.x, Q.y):
+            if self.y == 0:
+                return Ideal(self.curve)
+
             m = (3 * self.x ** 2 + self.curve.a) / (2 * self.y)
 
         # if P != Q
@@ -90,3 +93,7 @@ if __name__ == '__main__':
     P = Point(1, 2, ec)
     Q = Point(3, 4, ec)
     print(P + Q)
+
+    df3 = pd.DataFrame({'a': [1, 2], 'b': ['s', 'd']})
+    df4 = pd.DataFrame({'a': ['s', 'd'], 'b': [1, 2]})
+    print(df3.equals(df4))
